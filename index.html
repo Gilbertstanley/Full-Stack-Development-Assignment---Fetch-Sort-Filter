@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Git Hub Repositories</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color:lightgreen;
+        }
+    </style>
+</head>
+<body>
+
+<h1 style="color:royalblue" id="hero">Git Hub Repositories</h1 >
+
+<input type="text" id="searchInput" placeholder="Search for repositories..." onkeyup="searchTable()">
+<button onclick="sortTable(true)" id="up">Sort A-Z</button>
+<button onclick="sortTable(false)" id="down">Sort Z-A</button>
+
+<table id="repoTable">
+    <thead>
+        <tr>
+            <th>URL</th>
+            <th>Language</th>
+            <th>Git URL</th>
+            <th>Updated At</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Rows will be inserted here by JavaScript -->
+    </tbody>
+</table>
+<!-- 
+<script>
+function fetchRepos() {
+    fetch('https://api.github.com/orgs/google/repos')
+    .then(res => res.json())
+    .then(data => {
+        const tableBody = document.querySelector('#repoTable tbody');
+        tableBody.innerHTML = '';
+        data.forEach(repo => {
+            const row = document.createElement('tr');
+            
+            const urlCell = document.createElement('td');
+            const urlLink = document.createElement('a');
+            urlLink.href = repo.html_url;
+            urlLink.textContent = repo.name;
+            urlCell.appendChild(urlLink);
+            row.appendChild(urlCell);
+
+            const languageCell = document.createElement('td');
+            languageCell.textContent = repo.language || 'N/A';
+            row.appendChild(languageCell);
+
+            const gitUrlCell = document.createElement('td');
+            const gitUrlLink = document.createElement('a');
+            gitUrlLink.href = repo.git_url;
+            gitUrlLink.textContent = repo.git_url;
+            gitUrlCell.appendChild(gitUrlLink);
+            row.appendChild(gitUrlCell);
+
+            const updatedAtCell = document.createElement('td');
+            updatedAtCell.textContent = new Date(repo.updated_at).toLocaleString();
+            row.appendChild(updatedAtCell);
+
+            tableBody.appendChild(row);
+        });
+    })
+    .catch(error => console.error('Error fetching data:', error));
+}
+
+function searchTable() {
+    const input = document.getElementById('searchInput');
+    const filter = input.value.toLowerCase();
+    const table = document.getElementById('repoTable');
+    const tr = table.getElementsByTagName('tr');
+
+    for (let i = 1; i < tr.length; i++) {
+        const td = tr[i].getElementsByTagName('td')[0];
+        if (td) {
+            const txtValue = td.textContent || td.innerText;
+            tr[i].style.display = txtValue.toLowerCase().indexOf(filter) > -1 ? '' : 'none';
+        }
+    }
+}
+
+function sortTable(asc) {
+    const table = document.getElementById('repoTable');
+    const tbody = table.tBodies[0];
+    const rows = Array.from(tbody.rows);
+
+    rows.sort((a, b) => {
+        const nameA = a.cells[0].textContent.toLowerCase();
+        const nameB = b.cells[0].textContent.toLowerCase();
+        if (nameA < nameB) return asc ? -1 : 1;
+        if (nameA > nameB) return asc ? 1 : -1;
+        return 0;
+    });
+
+    rows.forEach(row => tbody.appendChild(row));
+}
+
+fetchRepos();
+</script>  -->
+<script src="script.js"></script>
+</body>
+</html>

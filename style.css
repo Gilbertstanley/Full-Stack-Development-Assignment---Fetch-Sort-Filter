@@ -1,0 +1,101 @@
+body {
+  font-family:cursive;
+  margin: 2rem;
+  background-image: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.search-and-sort {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.search-and-sort input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  flex-grow: 1;
+}
+
+.search-and-sort button {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+/*   border-radius: 10px; */
+  
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  /* background-color: lightgreen; */
+  /* border-radius: 10px; */
+}
+
+th {
+  background-color: #f2f2f2;
+  position: sticky;
+  top: 0;
+  background-color:turquoise;
+  border-radius: 8px;
+}
+
+td a {
+  color: #333;
+  text-decoration: none;
+}
+
+td a:hover {
+  text-decoration: underline;
+ /*  background-color: slategrey; */
+}
+#up {
+  top: 50px;
+  position:absolute;
+  left: 210px;
+  height: 30px;
+  font-family: cursive;
+  border-radius: 5px;
+  border-color: slategrey;
+}
+#up:hover {
+  background-color:rgb(222, 222, 216);
+}
+#down:hover {
+ /*  background-color:rgb(250, 250, 248); */
+  background-color:rgb(222, 222, 216);
+}
+#down{
+  top: 50px;
+  position:absolute;
+  left: 290px;
+  height: 30px;
+  font-family: cursive;
+  border-radius: 5px;
+  border-color:  slategrey;
+}
+
+#searchInput{
+  position: absolute;
+  top: 50px; 
+  height: 27px;
+  border-radius: 5px;
+  border-color: slategrey;
+  background-color:mistyrose;
+}
+#searchInput:hover{
+  background-color: lightsteelblue;
+}
+#hero{
+  font-family:cursive;
+}
